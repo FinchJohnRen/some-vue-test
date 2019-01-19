@@ -15,20 +15,23 @@
 import Imgs  from "@components/Imgs";
 import Slot  from "@components/Slot";
 import Attrs  from "@components/Attrs";
+import EventBus  from "@components/eventbus/index";
 export default {
   el: '#app',
   components: {
     Imgs,
     Slot,
-    Attrs
+    Attrs,
+    EventBus
   },
   data () {
     return {
-        componentsArr: ['Imgs','Slot', 'Attrs'],
+        componentsArr: ['Imgs','Slot', 'Attrs', 'EventBus'],
         currentCom: 'Imgs'
       }
     },
     created () {
+      console.log(this);
       Promise.try(this.p1).then(res => {
         console.log('try', res)
       })

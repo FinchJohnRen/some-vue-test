@@ -26,7 +26,7 @@ export default {
   props: {
     list: {
       type: Array
-    }
+    },
   },
   data () {
     return {
