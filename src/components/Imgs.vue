@@ -13,8 +13,8 @@
 <style scoped>
 .img,.assetimg{
   display: inline-block;
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   background: url('/static/img/logo.png');
 }
 .assetimg {

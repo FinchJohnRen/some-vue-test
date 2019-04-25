@@ -2,7 +2,7 @@
   <div class="container">
     <ul>
       <li v-for="(item, idx) in list" :key="idx">
-        <slot :text="item">{{item}}</slot>
+        <slot>{{item}}</slot>
       </li>
     </ul>
 
@@ -25,7 +25,8 @@ export default {
   name: 'layoutSlot',
   props: {
     list: {
-      type: Array
+      type: Array,
+      default: () => [112,3,1]
     },
   },
   data () {

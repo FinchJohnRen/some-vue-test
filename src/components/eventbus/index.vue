@@ -17,10 +17,6 @@ export default {
     }
   },
   created () {
-
-
-
-
     eventbus.$on('getName', function () {
       console.log('我是父组件');
     })

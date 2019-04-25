@@ -11,6 +11,7 @@ var childCom = {
       <p>foo: {{ foo }}</p>
       <p>attrs: {{ $attrs }}</p>
       <button @click="$listeners.click(emeit)">click</button>
+      <button @click="childClick">childClick</button>
     </div>`,
   data () {
     return {
@@ -22,7 +23,7 @@ var childCom = {
   },
   methods: {
     childClick() {
-      this.$emit('click')
+      this.$emit('click', this.emeit)
     }
   }
   
