@@ -19,6 +19,7 @@ import Attrs from "@components/Attrs";
 import EventBus from "@components/eventbus/index";
 import Snap from "@components/snap";
 import fullScreen from "@components/fullScreen";
+import Editer from "@components/Editer";
 export default {
   el: "#app",
   components: {
@@ -27,11 +28,12 @@ export default {
     Attrs,
     EventBus,
     Snap,
-    fullScreen
+    fullScreen,
+    Editer,
   },
   data() {
     return {
-      componentsArr: ["Imgs", "Slot", "Attrs", "EventBus", "Snap", "fullScreen"],
+      componentsArr: ["Imgs", "Attrs", "EventBus", "Snap", "fullScreen", "Editer"],
       currentCom: "Imgs",
       list: [1, 2, 3]
     };
@@ -50,6 +52,7 @@ export default {
   },
   mounted() {
     this.asy().then(res => console.log(res));
+    this.promiseAll()
   },
   methods: {
     p1() {
@@ -78,6 +81,15 @@ export default {
     },
     change(val) {
       this.currentCom = val;
+    },
+    promiseAll() {
+      let p1 = Promise.resolve('Hello');
+      let p2 = Promise.resolve('bigbro')
+      let promiesall= Promise.all([p1, p2])
+      promiesall.then(([res1,res2]) => {
+        console.log(res1,res2);
+      })
+      console.log('promiesall',promiesall);
     }
   },
  
